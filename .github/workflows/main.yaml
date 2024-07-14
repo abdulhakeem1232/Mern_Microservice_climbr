@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Adjust Node.js version as per your requirements
+          node-version: '18'  # Adjust Node.js version as per your requirements
 
       - name: Install dependencies
         working-directory: climbr_client  # Set working directory to client submodule

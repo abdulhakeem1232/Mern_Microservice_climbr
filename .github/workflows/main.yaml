@@ -1,4 +1,4 @@
-name: Deploy React App to S3
+name: Deploy React App to S3 (Client Only)
 
 on:
   push:
@@ -12,16 +12,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          submodules: recursive  # Ensure submodules are checked out
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '14'  # Adjust Node.js version as per your requirements
 
       - name: Install dependencies
+        working-directory: climbr_client  # Set working directory to client submodule
         run: npm ci
 
       - name: Build React app
+        working-directory: climbr_client  # Set working directory to client submodule
         run: npm run build
 
       - name: Configure AWS credentials
@@ -40,7 +44,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync build/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          aws s3 sync climbr_client/build/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
           echo "Deployment completed successfully"
 
       - name: Invalidate CloudFront

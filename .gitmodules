@@ -1,0 +1,21 @@
+[submodule "climbr_client"]
+	path = climbr_client
+	url = https://github.com/abdulhakeem1232/climbr_client.git
+[submodule "climbr_api_gateway"]
+	path = climbr_api_gateway
+	url = https://github.com/abdulhakeem1232/climbr_api_gateway.git
+[submodule "climbr_user_service"]
+	path = climbr_user_service
+	url = https://github.com/abdulhakeem1232/climbr_user_service.git
+[submodule "Recruiter_service"]
+	path = Recruiter_service
+	url = https://github.com/abdulhakeem1232/Recruiter_service.git
+[submodule "climbr_post_service"]
+	path = climbr_post_service
+	url = https://github.com/abdulhakeem1232/climbr_post_service.git
+[submodule "climbr_job_service"]
+	path = climbr_job_service
+	url = https://github.com/abdulhakeem1232/climbr_job_service.git
+[submodule "climbr-message"]
+	path = climbr-message
+	url = https://github.com/abdulhakeem1232/climbr-message.git
